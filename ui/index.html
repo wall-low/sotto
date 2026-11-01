@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>Sotto</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="titlebar" data-tauri-drag-region></div>
+
+  <section id="setup" class="screen center" hidden>
+    <img class="logo" src="logo.png" alt="">
+    <h1>Sotto</h1>
+    <p class="lead">Перед первым запуском нужно скачать компоненты, около 130 МБ.</p>
+    <p class="note">YouTube иногда просит войти в аккаунт. Тогда Sotto возьмёт вход из вашего браузера, а система может спросить разрешение. Разрешите доступ, иначе видео может не скачаться.</p>
+    <div class="grow"></div>
+    <div id="setup-progress" class="progress-block" hidden>
+      <div class="row-text"><span id="setup-stage"></span><span id="setup-percent" class="muted"></span></div>
+      <div class="bar"><div id="setup-bar" class="bar-fill"></div></div>
+    </div>
+    <p id="setup-error" class="note error" hidden></p>
+    <button id="setup-button" class="primary">Установить</button>
+  </section>
+
+  <section id="form" class="screen" hidden>
+    <header class="hero">
+      <img class="logo" src="logo.png" alt="">
+      <h1>Sotto</h1>
+      <p class="lead">Видео с YouTube с русской озвучкой</p>
+    </header>
+
+    <input id="link" class="field" type="text" placeholder="Ссылка на YouTube" autocomplete="off" spellcheck="false">
+    <p id="link-problem" class="footnote"></p>
+
+    <div id="modes" class="segments" role="tablist">
+      <span class="segment-thumb"></span>
+      <button data-mode="dubbed">С озвучкой</button>
+      <button data-mode="video">Без озвучки</button>
+      <button data-mode="voice">Только озвучка</button>
+    </div>
+
+    <div class="group">
+      <label id="quality-row" class="row">
+        <span>Качество</span>
+        <select id="quality">
+          <option value="360">360p</option>
+          <option value="480">480p</option>
+          <option value="720">720p</option>
+          <option value="1080">1080p</option>
+          <option value="max">Максимальное</option>
+        </select>
+      </label>
+      <div id="file-row" class="row">
+        <span>Своё видео</span>
+        <span class="row-actions">
+          <button id="file-clear" class="link" hidden>Убрать</button>
+          <button id="file" class="link">Выбрать</button>
+        </span>
+      </div>
+      <div class="row">
+        <span>Папка</span>
+        <button id="folder" class="link"></button>
+      </div>
+    </div>
+
+    <p id="form-note" class="footnote"></p>
+    <div class="grow"></div>
+    <button id="start" class="primary" disabled>Скачать</button>
+  </section>
+
+  <section id="run" class="screen" hidden>
+    <div class="thumb"><img id="thumb" alt="" hidden></div>
+    <h2 id="run-title">Узнаю, что за видео</h2>
+    <p id="run-meta" class="muted small"></p>
+    <div class="grow"></div>
+    <div class="progress-block">
+      <div class="row-text"><strong id="stage"></strong><span id="percent" class="muted"></span></div>
+      <div id="bar" class="bar"><div id="bar-fill" class="bar-fill"></div></div>
+      <div class="row-text small muted"><span id="stat-left"></span><span id="stat-right"></span></div>
+    </div>
+    <div class="grow"></div>
+    <div class="actions">
+      <button class="link show-log">Журнал</button>
+      <button id="cancel" class="secondary">Отменить</button>
+    </div>
+  </section>
+
+  <section id="done" class="screen center" hidden>
+    <div class="grow"></div>
+    <div class="mark ok">
+      <svg viewBox="0 0 52 52"><circle cx="26" cy="26" r="24"/><path d="M15 27l8 8 15-17"/></svg>
+    </div>
+    <h2>Готово</h2>
+    <p id="done-name" class="text"></p>
+    <p id="done-meta" class="muted small"></p>
+    <div class="grow"></div>
+    <button id="open" class="primary">Открыть</button>
+    <div class="actions">
+      <button id="reveal" class="link">Показать в папке</button>
+      <button id="again" class="link">Скачать ещё</button>
+    </div>
+  </section>
+
+  <section id="fail" class="screen center" hidden>
+    <div class="grow"></div>
+    <div class="mark warn">
+      <svg viewBox="0 0 52 52"><path d="M26 6l22 38H4z"/><path d="M26 20v12M26 38v.5"/></svg>
+    </div>
+    <h2 id="fail-title"></h2>
+    <p id="fail-message" class="text"></p>
+    <p id="fail-hint" class="muted text"></p>
+    <div class="grow"></div>
+    <button id="fail-primary" class="primary"></button>
+    <button id="fail-secondary" class="secondary" hidden></button>
+    <div class="actions">
+      <button class="link show-log">Журнал</button>
+      <button id="back" class="link">Назад</button>
+    </div>
+  </section>
+
+  <dialog id="log">
+    <pre id="log-text"></pre>
+    <div class="actions">
+      <button id="log-copy" class="link">Скопировать</button>
+      <button id="log-close" class="secondary">Закрыть</button>
+    </div>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+</html>
