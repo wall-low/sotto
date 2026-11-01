@@ -1,109 +1,108 @@
 <p align="center">
-  <img src="assets/icon.png" width="128" alt="Sotto icon">
+  <img src="assets/icon.png" width="128" alt="Значок Sotto">
 </p>
 
 <h1 align="center">Sotto</h1>
 
 <p align="center">
-  Save YouTube videos for offline viewing, with a Russian voice-over on top of the original.<br>
-  macOS, Windows and Linux.
+  Скачивает видео с YouTube для просмотра офлайн и накладывает русскую озвучку поверх оригинала.<br>
+  macOS, Windows и Linux.
 </p>
 
 <p align="center">
-  <a href="https://github.com/wall-low/sotto/releases/latest"><b>Download</b></a>
+  <a href="https://github.com/wall-low/sotto/releases/latest"><b>Скачать</b></a>
   &nbsp;·&nbsp;
-  <a href="README.ru.md">Русский</a>
+  <a href="README.en.md">English</a>
 </p>
 
 <p align="center">
-  <img src="assets/screenshots/hero.png" alt="Sotto main screen and download in progress">
+  <img src="assets/screenshots/hero.png" alt="Главный экран Sotto и скачивание">
 </p>
 
-Paste a link and press one button. Sotto fetches the video, gets the Russian voice-over from
-Yandex and mixes it in, keeping the original quietly underneath at 20% volume. The name comes
-from *sotto voce*, "in a low voice". The interface is in Russian, since that is who it is for.
+Вставляете ссылку и нажимаете одну кнопку. Sotto скачивает видео, получает русскую озвучку
+от Яндекса и смешивает звук: голос поверх, а оригинал тихо звучит под ним на 20% громкости.
+Отсюда название: *sotto voce* значит «вполголоса».
 
-## What it does
+## Что умеет
 
-| Mode | Result |
+| Режим | Что получится |
 |---|---|
-| **С озвучкой** (dubbed) | mp4 with the Russian voice over the original sound |
-| **Без озвучки** (original) | a plain download in the quality you pick, 360p up to 4K |
-| **Только озвучка** (voice only) | mp3 with just the Russian voice. Usually works even when YouTube itself is blocked |
-| **Своё видео** (your own file) | takes the voice from the link and adds it to a video you already have |
+| **С озвучкой** | mp4 с русским голосом поверх оригинала |
+| **Без озвучки** | обычное скачивание в нужном качестве, от 360p до 4K |
+| **Только озвучка** | mp3 с русским голосом. Обычно работает, даже если YouTube закрыт |
+| **Своё видео** | голос берётся по ссылке и добавляется к видео, которое у вас уже есть |
 
-- Nothing to install by hand. On first launch Sotto downloads what it needs, about 130 MB, and checks every checksum.
-- Stays working. yt-dlp updates itself once a week, because YouTube breaks old versions quickly.
-- Shows what is going on: current step, percent, time left, speed and size.
-- Explains failures in plain words and offers a way forward instead of printing a traceback.
-- Follows the system light or dark theme.
+- Ничего не надо ставить вручную. При первом запуске Sotto скачает нужные компоненты, около 130 МБ, и сверит контрольные суммы.
+- Не устаревает. yt-dlp обновляется сам раз в неделю, потому что YouTube быстро ломает старые версии.
+- Показывает, что происходит: этап, проценты, оставшееся время, скорость и размер.
+- Объясняет ошибки человеческим языком и предлагает, что делать дальше.
+- Подстраивается под светлую и тёмную тему системы.
 
 <table>
   <tr>
-    <td><img src="assets/screenshots/form-light.png" alt="Form"></td>
-    <td><img src="assets/screenshots/run-light.png" alt="Download progress"></td>
-    <td><img src="assets/screenshots/done-light.png" alt="Finished"></td>
+    <td><img src="assets/screenshots/form-light.png" alt="Форма"></td>
+    <td><img src="assets/screenshots/run-light.png" alt="Скачивание"></td>
+    <td><img src="assets/screenshots/done-light.png" alt="Готово"></td>
   </tr>
   <tr>
-    <td><img src="assets/screenshots/setup-dark.png" alt="First launch"></td>
-    <td><img src="assets/screenshots/form-dark.png" alt="Form in dark theme"></td>
-    <td><img src="assets/screenshots/auth-dark.png" alt="Sign-in error with fallbacks"></td>
+    <td><img src="assets/screenshots/setup-dark.png" alt="Первый запуск"></td>
+    <td><img src="assets/screenshots/form-dark.png" alt="Форма в тёмной теме"></td>
+    <td><img src="assets/screenshots/auth-dark.png" alt="Ошибка входа и запасные варианты"></td>
   </tr>
 </table>
 
-## Install
+## Установка
 
-Grab the installer for your system from [Releases](https://github.com/wall-low/sotto/releases/latest).
+Скачайте установщик для своей системы в [Releases](https://github.com/wall-low/sotto/releases/latest).
 
-| System | File |
+| Система | Файл |
 |---|---|
-| macOS | `.dmg`, Apple Silicon or Intel |
-| Windows | `.msi` or `-setup.exe` |
-| Linux | `.AppImage` or `.deb` |
+| macOS | `.dmg`, для Apple Silicon или Intel |
+| Windows | `.msi` или `-setup.exe` |
+| Linux | `.AppImage` или `.deb` |
 
-The builds are not signed with a paid certificate, so the system warns you the first time:
+Сборки не подписаны платным сертификатом, поэтому при первом запуске система предупредит:
 
-- **macOS:** try to open the app, then go to System Settings, Privacy & Security, and press Open Anyway.
-- **Windows:** in the SmartScreen window press More info, then Run anyway.
+- **macOS:** попробуйте открыть приложение, затем зайдите в Системные настройки, Конфиденциальность и безопасность, и нажмите «Всё равно открыть».
+- **Windows:** в окне SmartScreen нажмите «Подробнее», затем «Выполнить в любом случае».
 
-## YouTube sign-in
+## Вход в YouTube
 
-On a regular home connection you usually do not need one. Through a VPN, YouTube often asks to
-prove you are not a bot. Sotto then tries the browsers on your computer one by one, reads the
-YouTube session with yt-dlp and remembers which browser worked. The cookies are used only while
-the download runs and go only to YouTube.
+На обычном домашнем интернете вход чаще всего не нужен. Через VPN YouTube часто просит подтвердить,
+что вы не бот. Тогда Sotto по очереди пробует браузеры на компьютере, читает сессию YouTube
+с помощью yt-dlp и запоминает, какой браузер подошёл. Cookies используются только во время
+загрузки и передаются только самому YouTube.
 
-The system may ask for permission. On macOS that is keychain access, choose Always Allow. Without
-it the video may not download.
+Система может спросить разрешение. На macOS это доступ к связке ключей, выберите «Всегда разрешить».
+Без этого видео может не скачаться.
 
-On Windows, Chrome encrypts cookies in a way yt-dlp often cannot read, so Firefox is the safer choice there.
+На Windows Chrome шифрует cookies так, что yt-dlp часто не может их прочитать, там надёжнее Firefox.
 
-## How it works
+## Как устроено
 
-The window is plain HTML, CSS and JavaScript. The core is Rust on [Tauri](https://tauri.app), so the
-app stays small, about 7 MB on macOS. The core runs these tools and reads their output:
+Окно написано на обычных HTML, CSS и JavaScript. Ядро на Rust и [Tauri](https://tauri.app),
+поэтому приложение маленькое, на macOS около 7 МБ. Ядро запускает эти программы и разбирает их вывод:
 
-| Tool | Job |
+| Программа | Зачем |
 |---|---|
-| [yt-dlp](https://github.com/yt-dlp/yt-dlp) | downloads the video |
-| [vot-cli](https://github.com/FOSWLY/vot-cli) | gets the Yandex voice-over |
-| [ffmpeg](https://ffmpeg.org) | mixes the audio, the video stream is copied untouched |
-| [deno](https://deno.com) | yt-dlp needs it for YouTube's checks |
+| [yt-dlp](https://github.com/yt-dlp/yt-dlp) | скачивание видео |
+| [vot-cli](https://github.com/FOSWLY/vot-cli) | озвучка Яндекса |
+| [ffmpeg](https://ffmpeg.org) | смешивание звука, видео не перекодируется |
+| [deno](https://deno.com) | нужен yt-dlp для проверок YouTube |
 
-The order in [`job.rs`](src-tauri/src/job.rs) matters:
+Порядок работы в [`job.rs`](src-tauri/src/job.rs) не случаен:
 
-1. Check the link. If YouTube wants a sign-in, walk through the browsers.
-2. Get the voice first, so a refusal from Yandex does not waste a full video download.
-3. Download the video, preferring h264 so QuickTime can open it.
-4. Mix: the original at 20% with the voice on top.
+1. Проверка ссылки. Если YouTube просит вход, Sotto перебирает браузеры.
+2. Сначала озвучка, чтобы при отказе Яндекса не качать видео зря.
+3. Скачивание видео, по возможности в h264, чтобы файл открывался в QuickTime.
+4. Смешивание: оригинал на 20% и голос поверх.
 
-`vot-cli` does not report its progress, so Sotto watches the mp3 grow instead. The bitrate is
-constant, which means the final size is known in advance.
+`vot-cli` не сообщает о ходе работы, поэтому Sotto следит за растущим mp3. Битрейт у него
+постоянный, значит итоговый размер известен заранее.
 
-## Build from source
+## Сборка из исходников
 
-You need Rust and Node.js. On Linux, also the packages listed in
-[`check.yml`](.github/workflows/check.yml).
+Нужны Rust и Node.js, на Linux ещё пакеты из [`check.yml`](.github/workflows/check.yml).
 
 ```bash
 npm ci
@@ -113,7 +112,7 @@ npm ci
 npx tauri build
 ```
 
-Run the core without a window:
+Запуск ядра без окна:
 
 ```bash
 cd src-tauri && cargo test --lib
@@ -123,24 +122,24 @@ cd src-tauri && cargo test --lib
 cargo run --example cli -- run dubbed 720 ./out 'https://www.youtube.com/watch?v=...'
 ```
 
-GitHub Actions builds installers for every system when a `v*` tag is pushed.
+Установщики для всех систем собирает GitHub Actions по тегу `v*`.
 
-## Limits
+## Ограничения
 
-- Yandex does not voice everything: very long videos and speech other than English can be refused.
-- For a video nobody has translated yet, Yandex does not report the time left.
-- The maximum quality can be vp9 or av1. QuickTime will not open those, use IINA or VLC.
+- Яндекс озвучивает не всё: бывает отказ на очень длинных видео и на речи не на английском.
+- Для видео, которое ещё никто не переводил, Яндекс не сообщает оставшееся время.
+- Максимальное качество может оказаться в vp9 или av1. QuickTime такое не откроет, нужен IINA или VLC.
 
-## Disclaimer
+## Важно
 
-A personal tool for watching videos offline, not affiliated with YouTube or Yandex. Downloading
-may break YouTube's terms, and the voice-over goes through an unofficial API. Respect copyright
-and the terms of these services.
+Личный инструмент для просмотра видео офлайн, не связан с YouTube и Яндексом. Скачивание может
+нарушать условия YouTube, озвучка идёт через неофициальный API. Соблюдайте авторские права
+и условия сервисов.
 
-The icon was generated with AI. The screenshots show the interface with sample progress values
-and lecture 1 of [MIT 6.0001](https://ocw.mit.edu/courses/6-0001-introduction-to-computer-science-and-programming-in-python-fall-2016/)
-by Ana Bell, MIT OpenCourseWare, CC BY-NC-SA.
+Иконка сгенерирована нейросетью. На скриншотах интерфейс с примерными значениями прогресса
+и первая лекция курса [MIT 6.0001](https://ocw.mit.edu/courses/6-0001-introduction-to-computer-science-and-programming-in-python-fall-2016/),
+Ana Bell, MIT OpenCourseWare, CC BY-NC-SA.
 
-## License
+## Лицензия
 
 [MIT](LICENSE)
