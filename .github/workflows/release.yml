@@ -48,3 +48,12 @@ jobs:
           releaseName: Sotto ${{ github.ref_name }}
           releaseDraft: true
           args: --target ${{ matrix.target }}
+
+  tidy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: .github/tidy-release.sh "${{ github.ref_name }}"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

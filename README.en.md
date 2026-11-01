@@ -70,12 +70,14 @@ There is nothing to configure. In our test, a two-hour lecture that Yandex had a
 
 Get the file for your system from the [releases page](https://github.com/wall-low/sotto/releases/latest).
 
-| System | Which file |
+| Your computer | File |
 |---|---|
-| macOS on Apple Silicon | `.dmg` with `aarch64` in the name |
-| macOS on Intel | `.dmg` with `x64` in the name |
-| Windows | `-setup.exe` |
-| Linux | `.AppImage` or `.deb` |
+| Mac with M1 or newer | [Sotto-macOS-Apple-Silicon.dmg](https://github.com/wall-low/sotto/releases/latest/download/Sotto-macOS-Apple-Silicon.dmg) |
+| Mac with Intel | [Sotto-macOS-Intel.dmg](https://github.com/wall-low/sotto/releases/latest/download/Sotto-macOS-Intel.dmg) |
+| Windows | [Sotto-Windows-Setup.exe](https://github.com/wall-low/sotto/releases/latest/download/Sotto-Windows-Setup.exe) |
+| Linux | [AppImage](https://github.com/wall-low/sotto/releases/latest/download/Sotto-Linux-x64.AppImage), [deb](https://github.com/wall-low/sotto/releases/latest/download/Sotto-Linux-x64.deb) or [rpm](https://github.com/wall-low/sotto/releases/latest/download/Sotto-Linux-x64.rpm) |
+
+To check your Mac, open the Apple menu and choose About This Mac. Linux ARM builds are on the [releases page](https://github.com/wall-low/sotto/releases/latest).
 
 The system may warn you the first time, because the app is not signed with a paid certificate:
 

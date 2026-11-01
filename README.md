@@ -69,12 +69,14 @@
 
 Скачайте файл для своей системы со [страницы релизов](https://github.com/wall-low/sotto/releases/latest).
 
-| Система | Какой файл выбрать |
+| Ваш компьютер | Файл |
 |---|---|
-| macOS с чипом M1 и новее | `.dmg` с `aarch64` в названии |
-| macOS на Intel | `.dmg` с `x64` в названии |
-| Windows | `-setup.exe` |
-| Linux | `.AppImage` или `.deb` |
+| Mac с чипом M1 и новее | [Sotto-macOS-Apple-Silicon.dmg](https://github.com/wall-low/sotto/releases/latest/download/Sotto-macOS-Apple-Silicon.dmg) |
+| Mac с процессором Intel | [Sotto-macOS-Intel.dmg](https://github.com/wall-low/sotto/releases/latest/download/Sotto-macOS-Intel.dmg) |
+| Windows | [Sotto-Windows-Setup.exe](https://github.com/wall-low/sotto/releases/latest/download/Sotto-Windows-Setup.exe) |
+| Linux | [AppImage](https://github.com/wall-low/sotto/releases/latest/download/Sotto-Linux-x64.AppImage), [deb](https://github.com/wall-low/sotto/releases/latest/download/Sotto-Linux-x64.deb) или [rpm](https://github.com/wall-low/sotto/releases/latest/download/Sotto-Linux-x64.rpm) |
+
+Какой у вас Mac, видно в меню Apple, пункт «Об этом Mac». Версии для Linux на ARM лежат на [странице релизов](https://github.com/wall-low/sotto/releases/latest).
 
 При первом запуске система может предупредить, что разработчик неизвестен. Приложение не подписано платным сертификатом, вот как его открыть:
 
