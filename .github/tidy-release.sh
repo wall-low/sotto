@@ -37,4 +37,5 @@ gh api "repos/$REPO/releases/$release_id/assets" --paginate --jq '.[] | "\(.id) 
     echo "$name -> $new"
   done
 
-gh api -X PATCH "repos/$REPO/releases/$release_id" -F body=@"$NOTES" >/dev/null
+# Тег передаётся явно: иначе у черновика он может слететь на untagged-...
+gh api -X PATCH "repos/$REPO/releases/$release_id" -f tag_name="$TAG" -F body=@"$NOTES" >/dev/null
