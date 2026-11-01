@@ -5,105 +5,124 @@
 <h1 align="center">Sotto</h1>
 
 <p align="center">
-  Save YouTube videos for offline viewing, with a Russian voice-over on top of the original.<br>
-  macOS, Windows and Linux.
+  <b>Download YouTube videos with a Russian voice-over and watch them anywhere, even offline.</b><br>
+  A free app for macOS, Windows and Linux.
 </p>
 
 <p align="center">
-  <a href="https://github.com/wall-low/sotto/releases/latest"><b>Download</b></a>
+  <a href="https://github.com/wall-low/sotto/releases/latest"><b>Download Sotto</b></a>
   &nbsp;·&nbsp;
   <a href="README.md">Русский</a>
 </p>
 
 <p align="center">
-  <img src="assets/screenshots/hero.png" alt="Sotto main screen and download in progress">
+  <img src="assets/screenshots/hero.png" alt="Sotto: a YouTube downloader with Russian voice-over">
 </p>
 
-Paste a link and press one button. Sotto fetches the video, gets the Russian voice-over from
-Yandex and mixes it in, keeping the original quietly underneath at 20% volume. The name comes
-from *sotto voce*, "in a low voice". The interface is in Russian, since that is who it is for.
+Great lectures and courses on YouTube are often available only in English. Browser translation
+works only while you are online with the tab open. Sotto turns the video into a regular file with
+a Russian voice-over instead. The Russian voice plays on top, with the original quietly underneath.
 
-## What it does
+The file is yours to keep. Watch it on a plane, on your TV, or copy it to your phone.
 
-| Mode | Result |
-|---|---|
-| **С озвучкой** (dubbed) | mp4 with the Russian voice over the original sound |
-| **Без озвучки** (original) | a plain download in the quality you pick, 360p up to 4K |
-| **Только озвучка** (voice only) | mp3 with just the Russian voice. Usually works even when YouTube itself is blocked |
-| **Своё видео** (your own file) | takes the voice from the link and adds it to a video you already have |
+The app's interface is in Russian, since that is who it is for.
 
-- Nothing to install by hand. On first launch Sotto downloads what it needs, about 130 MB, and checks every checksum.
-- Stays working. yt-dlp updates itself once a week, because YouTube breaks old versions quickly.
-- Shows what is going on: current step, percent, time left, speed and size.
-- Explains failures in plain words and offers a way forward instead of printing a traceback.
-- Follows the system light or dark theme.
+## How to use it
+
+1. Copy a YouTube link.
+2. Paste it into Sotto and press the download button.
+3. Open the finished file.
+
+There is nothing to configure. In our test, a two-hour lecture that Yandex had already translated was ready in 5 minutes.
+
+## Why Sotto
+
+- **Free, no ads.** No sign-up, subscription or limits. The code is open.
+- **A regular mp4.** It opens in any player.
+- **Runs on your computer.** There is no Sotto server collecting your links or files.
+- **You always see what is happening.** Current step, percent, time left and speed.
+- **Clear errors.** If something goes wrong, the app explains it and offers a way forward.
+- **Nothing else to install.** Sotto downloads what it needs on first launch and keeps it updated.
+
+## What you can download
+
+| Mode | Result | Good for |
+|---|---|---|
+| **С озвучкой** (dubbed) | video with the Russian voice | lectures, courses, podcasts, reviews |
+| **Без озвучки** (original) | a plain video with the original sound, 360p to 4K | simply saving a video |
+| **Только озвучка** (voice only) | mp3 with the Russian voice | listening like an audiobook |
+| **Своё видео** (your own file) | your file with the voice-over added | you already have the video |
 
 <table>
   <tr>
-    <td><img src="assets/screenshots/form-light.png" alt="Form"></td>
-    <td><img src="assets/screenshots/run-light.png" alt="Download progress"></td>
-    <td><img src="assets/screenshots/done-light.png" alt="Finished"></td>
+    <td><img src="assets/screenshots/form-light.png" alt="Paste a link and pick a mode"></td>
+    <td><img src="assets/screenshots/run-light.png" alt="Download progress with time left"></td>
+    <td><img src="assets/screenshots/done-light.png" alt="Finished file"></td>
   </tr>
   <tr>
     <td><img src="assets/screenshots/setup-dark.png" alt="First launch"></td>
-    <td><img src="assets/screenshots/form-dark.png" alt="Form in dark theme"></td>
-    <td><img src="assets/screenshots/auth-dark.png" alt="Sign-in error with fallbacks"></td>
+    <td><img src="assets/screenshots/form-dark.png" alt="Dark theme"></td>
+    <td><img src="assets/screenshots/auth-dark.png" alt="Clear errors with fallbacks"></td>
   </tr>
 </table>
 
 ## Install
 
-Grab the installer for your system from [Releases](https://github.com/wall-low/sotto/releases/latest).
+Get the file for your system from the [releases page](https://github.com/wall-low/sotto/releases/latest).
 
-| System | File |
+| System | Which file |
 |---|---|
-| macOS | `.dmg`, Apple Silicon or Intel |
-| Windows | `.msi` or `-setup.exe` |
+| macOS on Apple Silicon | `.dmg` with `aarch64` in the name |
+| macOS on Intel | `.dmg` with `x64` in the name |
+| Windows | `-setup.exe` |
 | Linux | `.AppImage` or `.deb` |
 
-The builds are not signed with a paid certificate, so the system warns you the first time:
+The system may warn you the first time, because the app is not signed with a paid certificate:
 
-- **macOS:** try to open the app, then go to System Settings, Privacy & Security, and press Open Anyway.
-- **Windows:** in the SmartScreen window press More info, then Run anyway.
+- **macOS:** try to open Sotto, then go to System Settings, Privacy & Security, and press Open Anyway.
+- **Windows:** press More info, then Run anyway.
 
-## YouTube sign-in
+Sotto then downloads its components, about 130 MB. This happens only once.
 
-On a regular home connection you usually do not need one. Through a VPN, YouTube often asks to
-prove you are not a bot. Sotto then tries the browsers on your computer one by one, reads the
-YouTube session with yt-dlp and remembers which browser worked. The cookies are used only while
-the download runs and go only to YouTube.
+## FAQ
 
-The system may ask for permission. On macOS that is keychain access, choose Always Allow. Without
-it the video may not download.
+**Is it really free?**
+Yes. Sotto is MIT licensed.
 
-On Windows, Chrome encrypts cookies in a way yt-dlp often cannot read, so Firefox is the safer choice there.
+**Which languages does it translate?**
+From English. The Russian voice comes from Yandex.
 
-## How it works
+**How good is the voice-over?**
+It is automatic translation with a synthetic voice, not studio work. That is enough for lectures and reviews, less so for films.
 
-The window is plain HTML, CSS and JavaScript. The core is Rust on [Tauri](https://tauri.app), so the
-app stays small, about 7 MB on macOS. The core runs these tools and reads their output:
+**How long does it take?**
+If someone has already translated the video, the voice arrives almost at once. A new video takes Yandex a few more minutes.
 
-| Tool | Job |
-|---|---|
-| [yt-dlp](https://github.com/yt-dlp/yt-dlp) | downloads the video |
-| [vot-cli](https://github.com/FOSWLY/vot-cli) | gets the Yandex voice-over |
-| [ffmpeg](https://ffmpeg.org) | mixes the audio, the video stream is copied untouched |
-| [deno](https://deno.com) | yt-dlp needs it for YouTube's checks |
+**Do I need a YouTube account?**
+Usually not. Through a VPN, YouTube often asks you to prove you are not a bot. Sotto then tries to use the sign-in from a browser on your computer, and the system may ask for permission. On macOS choose Always Allow, otherwise the video may not download. The sign-in data is used only during the download and goes only to YouTube.
 
-The order in [`job.rs`](src-tauri/src/job.rs) matters:
+**What if YouTube is blocked for me?**
+Downloading a video needs access to YouTube, so you may need a VPN. Voice-only mode often works without one, because the voice comes from Yandex. With your own file, you can add the voice-over to a video you got any other way.
 
-1. Check the link. If YouTube wants a sign-in, walk through the browsers.
-2. Get the voice first, so a refusal from Yandex does not waste a full video download.
-3. Download the video, preferring h264 so QuickTime can open it.
-4. Mix: the original at 20% with the voice on top.
+**Can I download a whole playlist?**
+Not yet, Sotto handles one video at a time.
 
-`vot-cli` does not report its progress, so Sotto watches the mp3 grow instead. The bitrate is
-constant, which means the final size is known in advance.
+**Can everything be dubbed?**
+No. Yandex may refuse very long videos, videos without speech, or speech other than English. Sotto then offers to download the video without a voice-over.
 
-## Build from source
+**Why will my maximum-quality file not open?**
+4K on YouTube often uses vp9 or av1, which QuickTime cannot play. Use [IINA](https://iina.io) or [VLC](https://www.videolan.org).
 
-You need Rust and Node.js. On Linux, also the packages listed in
-[`check.yml`](.github/workflows/check.yml).
+**Is it allowed?**
+Sotto is made for personal offline viewing. Downloading may break YouTube's terms, and the voice-over uses an unofficial API. The app is not affiliated with YouTube or Yandex. Please respect copyright.
+
+## For developers
+
+The window is HTML, CSS and JavaScript, the core is Rust on [Tauri](https://tauri.app), so the app is about 7 MB on macOS.
+
+The core runs [yt-dlp](https://github.com/yt-dlp/yt-dlp), [vot-cli](https://github.com/FOSWLY/vot-cli), [ffmpeg](https://ffmpeg.org) and [deno](https://deno.com) and parses their output. Components are downloaded on first launch with checksum verification, and yt-dlp updates weekly. The workflow is in [`job.rs`](src-tauri/src/job.rs).
+
+To build from source you need Rust and Node.js:
 
 ```bash
 npm ci
@@ -113,34 +132,8 @@ npm ci
 npx tauri build
 ```
 
-Run the core without a window:
+On Linux you also need the packages from [`check.yml`](.github/workflows/check.yml). GitHub Actions builds installers for every system on a `v*` tag.
 
-```bash
-cd src-tauri && cargo test --lib
-```
+Lecture in the screenshots: [MIT 6.0001](https://ocw.mit.edu/courses/6-0001-introduction-to-computer-science-and-programming-in-python-fall-2016/), Ana Bell, MIT OpenCourseWare, CC BY-NC-SA.
 
-```bash
-cargo run --example cli -- run dubbed 720 ./out 'https://www.youtube.com/watch?v=...'
-```
-
-GitHub Actions builds installers for every system when a `v*` tag is pushed.
-
-## Limits
-
-- Yandex does not voice everything: very long videos and speech other than English can be refused.
-- For a video nobody has translated yet, Yandex does not report the time left.
-- The maximum quality can be vp9 or av1. QuickTime will not open those, use IINA or VLC.
-
-## Disclaimer
-
-A personal tool for watching videos offline, not affiliated with YouTube or Yandex. Downloading
-may break YouTube's terms, and the voice-over goes through an unofficial API. Respect copyright
-and the terms of these services.
-
-The icon was generated with AI. The screenshots show the interface with sample progress values
-and lecture 1 of [MIT 6.0001](https://ocw.mit.edu/courses/6-0001-introduction-to-computer-science-and-programming-in-python-fall-2016/)
-by Ana Bell, MIT OpenCourseWare, CC BY-NC-SA.
-
-## License
-
-[MIT](LICENSE)
+[MIT](LICENSE) licensed.
